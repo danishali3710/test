@@ -1,0 +1,21 @@
+<%= javascript_pack_tag 'tags' %>
+
+<h1><%= @scraper.url %><h1>
+
+<table>
+
+    <% tags = @scraper.tags %>
+    <% tags.each do |key, value| %>
+        <tr>
+            <td id="<%=key%>" >
+            <%= key %>
+            </td>
+            <td id="<%=key%>">
+            <%= value %>
+            </td>
+        </tr>
+    <%end%>
+
+</table>
+
+<h6 id="source"><%= @scraper.source_code %></h6>

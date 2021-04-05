@@ -1,0 +1,22 @@
+<%= form_with(model: scraper) do |form| %>
+  <% if scraper.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(scraper.errors.count, "error") %> prohibited this vehicle from being saved:</h2>
+
+      <ul>
+        <% scraper.errors.each do |error| %>
+          <li><%= scraper.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
